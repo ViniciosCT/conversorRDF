@@ -13,29 +13,27 @@ public class TomadaService {
     private String port = "1000";
 
     public Model getTemperatura() {
-        String method = "temperatura";
-
-        //Conetca e traz o retorno
-        ConectaTomada conetaTomada = new ConectaTomada();
-        String retorno = conetaTomada.getDadosTomada(ip, port, method);
-
-        if (retorno.isEmpty() || retorno == null) {
-            String erro = " =========== Error: Could not connect! Verify that the hardware is connected to" +
-                    " the network with the ip \"" + ip + "\" and pot: \"" + port + "\" ========== ";
-            System.out.println(erro);
-            return null;
-        } else {
-
+//        String method = "temperatura";
+//
+//        //Conetca e traz o retorno
+//        ConectaTomada conetaTomada = new ConectaTomada();
+//        String retorno = conetaTomada.getDadosTomada(ip, port, method);
+//
+//        if (retorno.isEmpty() || retorno == null) {
+//            String erro = " =========== Error: Could not connect! Verify that the hardware is connected to" +
+//                    " the network with the ip \"" + ip + "\" and pot: \"" + port + "\" ========== ";
+//            System.out.println(erro);
+//            return null;
+//        } else {
+        String retorno = "25.82"; // Só para testar!!
         System.out.println(" =========== >> Temperatura consultada: " + retorno + " - Data: " + (new Date()) + " << ========== ");
 
         //Transformar em RDF com Jena:
         Model dadosRDF = gerarParaRDFModel(retorno, "temperature");
 
         return dadosRDF;
-        }
+//        }
     }
-
-    String retorno = "21.05"; // Só para testar!!
 
     public Model getUmidade() {
 //        String method = "umidade";

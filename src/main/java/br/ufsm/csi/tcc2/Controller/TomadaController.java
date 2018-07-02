@@ -42,7 +42,7 @@ public class TomadaController {
 
         //Conetca e traz o retorno
         ConectaTomada conetaTomada = new ConectaTomada();
-        String retorno = conetaTomada.getDadosTomada(ip, port, method);
+        String retorno = "ok" ;//conetaTomada.getDadosTomada(ip, port, method);
 
         if (retorno.isEmpty() || retorno == null) {
             System.out.println( " =========== Error: Could not connect! Verify that the hardware is connected to" +
