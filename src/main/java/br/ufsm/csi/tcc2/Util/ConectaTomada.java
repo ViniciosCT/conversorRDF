@@ -31,6 +31,9 @@ public class ConectaTomada {
                 }
                 System.out.println("--> " + retorno);
                 in.close();
+                if(comando.equals("ligar") || comando.equals("desligar")){
+                    retorno = "ok";
+                }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

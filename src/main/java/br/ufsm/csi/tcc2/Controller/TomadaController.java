@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/outlet001")
 public class TomadaController {
 
-    private String ip = "192.168.0.113";
-    private String port = "80";
+    private String ip = "192.168.0.30";
+    private String port = "1000";
     private boolean outletStateOn = false;
 
     @RequestMapping( value = "/test" ,method = RequestMethod.GET)
@@ -42,7 +42,7 @@ public class TomadaController {
 
         //Conetca e traz o retorno
         ConectaTomada conetaTomada = new ConectaTomada();
-        String retorno = "ok" ;//conetaTomada.getDadosTomada(ip, port, method);
+        String retorno = conetaTomada.getDadosTomada(ip, port, method);
 
         if (retorno.isEmpty() || retorno == null) {
             System.out.println( " =========== Error: Could not connect! Verify that the hardware is connected to" +
